@@ -21,9 +21,11 @@ public class ReadingDataFromExcelHT {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// implici wait
 		
-		driver.get("https://development-nam-hottopic.demandware.net/s/hottopic/account");
+		driver.get("https://storefront:emo4life@staging.hottopic.com/account");
+		
+		//driver.get("https://development-nam-hottopic.demandware.net/s/hottopic/account");
 		driver.findElement(By.xpath("//button[@class='ui-dialog-titlebar-close']")).click();
 		driver.manage().window().maximize();
 		
@@ -79,9 +81,10 @@ public class ReadingDataFromExcelHT {
 			//Select country= new Select(driver.findElement(By.id("dwfrm_profile_address_country")));
 			//country.selectByVisibleText(Country);
 			
-			driver.findElement(By.id("dwfrm_profile_address_postal")).sendKeys(Zipcode);
+			driver.findElement(By.id("dwfrm_profile_address_postal")).sendKeys(String.valueOf(Zipcode));
 			driver.findElement(By.id("dwfrm_profile_address_address1")).sendKeys(StreetAddress1);
-			//driver.findElement(By.id("dwfrm_profile_address_city")).sendKeys(City);
+			driver.findElement(By.id("dwfrm_profile_address_city")).clear();
+			driver.findElement(By.id("dwfrm_profile_address_city")).sendKeys(City);
 			//Select state= new Select(driver.findElement(By.id("dwfrm_profile_address_states_state")));
 			//state.selectByVisibleText(State);
 			driver.findElement(By.id("formatted-phone")).sendKeys(String.valueOf(PhoneNumber));
