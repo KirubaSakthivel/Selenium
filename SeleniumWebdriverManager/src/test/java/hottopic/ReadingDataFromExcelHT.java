@@ -23,9 +23,9 @@ public class ReadingDataFromExcelHT {
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// implici wait
 		
-		driver.get("https://storefront:emo4life@staging.hottopic.com/account");
+		//driver.get("https://storefront:emo4life@staging.hottopic.com/account");// authentication popup
 		
-		//driver.get("https://development-nam-hottopic.demandware.net/s/hottopic/account");
+		driver.get("https://development-nam-hottopic.demandware.net/s/hottopic/account");
 		driver.findElement(By.xpath("//button[@class='ui-dialog-titlebar-close']")).click();
 		driver.manage().window().maximize();
 		
