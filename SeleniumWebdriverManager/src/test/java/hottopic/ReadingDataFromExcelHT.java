@@ -21,7 +21,7 @@ public class ReadingDataFromExcelHT {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// implici wait
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// implicit wait
 		
 		//driver.get("https://storefront:emo4life@staging.hottopic.com/account");// authentication popup
 		
