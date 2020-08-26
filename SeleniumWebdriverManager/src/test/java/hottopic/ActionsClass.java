@@ -29,7 +29,11 @@ public class ActionsClass {
 		
 		Actions act= new Actions(driver);
 		
-		act.moveToElement(popculture).moveToElement(Cartoons).click();
+		act.moveToElement(popculture).moveToElement(Cartoons).click().build().perform();
+		
+		System.out.println(driver.getCurrentUrl());
+		
+		driver.close();
 	}
 
 }
